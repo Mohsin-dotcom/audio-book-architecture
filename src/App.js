@@ -1,7 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { AudioActions } from './redux/actions/audioActions';
 
 function App() {
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: AudioActions.Types.GET_TRANSCRIBED_AUDIO,
+      payload: {
+        //audio to transcribe.
+      }
+    });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
